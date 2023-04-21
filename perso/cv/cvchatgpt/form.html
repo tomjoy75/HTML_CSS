@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mon CV</title>
+</head>
+<body>
+
+  <h1>Mon CV</h1>
+
+  <form id="cv-form">
+    <label for="name">Nom :</label>
+    <input type="text" id="name" name="name"><br>
+
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email"><br>
+
+    <label for="experience">Expérience :</label>
+    <textarea id="experience" name="experience"></textarea><br>
+
+    <label for="education">Formation :</label>
+    <textarea id="education" name="education"></textarea><br>
+
+    <label for="skills">Compétences :</label>
+    <textarea id="skills" name="skills"></textarea><br>
+
+    <button type="submit">Enregistrer</button>
+  </form>
+
+  <script>
+    // Récupération du formulaire
+    const cvForm = document.getElementById("cv-form");
+
+// Ajout d'un écouteur d'événement pour la soumission du formulaire
+    cvForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Récupération des données saisies dans le formulaire
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const experience = document.getElementById("experience").value;
+    const education = document.getElementById("education").value;
+    const skills = document.getElementById("skills").value;
+
+    // Mise à jour des pages web avec les données récupérées
+    document.getElementById("page1").querySelector("#name").innerHTML = name;
+    document.getElementById("page1").querySelector("#email").innerHTML = email;
+    document.getElementById("page1").querySelector("#experience").innerHTML = experience;
+    document.getElementById("page1").querySelector("#education").innerHTML = education;
+    document.getElementById("page1").querySelector("#skills").innerHTML = skills;
+
+    document.getElementById("page2").querySelector("#name").innerHTML = name;
+    document.getElementById("page2").querySelector("#email").innerHTML = email;
+    document.getElementById("page2").querySelector("#experience").innerHTML = experience;
+    document.getElementById("page2").querySelector("#education").innerHTML = education;
+    document.getElementById("page2").querySelector("#skills").innerHTML = skills;
+});
+
+  </script>
+
+</body>
+</html>
